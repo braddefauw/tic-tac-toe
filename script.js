@@ -14,3 +14,11 @@ const Player = name => {
 
 const brad = Player('brad');
 // brad.getName();
+
+gameBoard.board.forEach((element) => {
+    let block = document.createElement("div");
+    block.classList.add("block");
+    block.innerText = element;
+    let board = document.querySelector('#board');
+    board.appendChild(block);
+});

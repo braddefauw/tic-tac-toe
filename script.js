@@ -15,17 +15,20 @@ const Player = name => {
 const brad = Player('brad');
 // brad.getName();
 
+let turn = 1;
+
 gameBoard.board.forEach((element) => {
-    let turn = "x";
     let block = document.createElement("div");
     block.classList.add("block");
     block.addEventListener('click', () => {
-        if(turn === "x"){
-            block.innerText = turn;
-            turn = "o"
-        }else{
-            block.innerText = turn;
-            turn = "x";
+        if(block.innerText === ""){
+            if(turn % 2 !== 0){
+                block.innerText = "X";
+                turn++;
+            }else{
+                block.innerText = "O";
+                turn++;
+            }
         }
     })
     let board = document.querySelector('#board');

@@ -16,13 +16,18 @@ const brad = Player('brad');
 // brad.getName();
 
 gameBoard.board.forEach((element) => {
-    let blockText = "x";
+    let turn = "x";
     let block = document.createElement("div");
     block.classList.add("block");
     block.addEventListener('click', () => {
-        block.innerText = blockText;
+        if(turn === "x"){
+            block.innerText = turn;
+            turn = "o"
+        }else{
+            block.innerText = turn;
+            turn = "x";
+        }
     })
-    block.innerText = element;
     let board = document.querySelector('#board');
     board.appendChild(block);
 });

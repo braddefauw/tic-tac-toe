@@ -74,6 +74,7 @@ const check = () => {
 restart.addEventListener('click', () => {
     let block = document.querySelectorAll('[data-index-number]');
     [].forEach.call(block, function(div) {
+        gameBoard.board[div.dataset.indexNumber] = "";
         div.innerHTML = "";
         message.innerText = "In Progress...";
         message.style.color = 'white';

@@ -16,13 +16,13 @@ body {
     flex-direction: column;
 }
 
-header, footer {
+header, .message {
     display: flex;
     align-items: center;
     width: 350px;
 }
 
-footer {
+.message {
     justify-content: center;
     margin-top: 2rem;
     color: white;
@@ -43,6 +43,10 @@ footer {
     cursor: pointer;
     height: 2rem;
     border-radius: 0.25rem;
+}
+
+.top-right img:hover {
+    background: grey;
 }
 
 .x, .o {
@@ -81,4 +85,8 @@ footer {
     align-items: center;
     box-shadow: 0 14px 2px -2px #04232C;
     font-size: 2rem;
+}
+
+.block:hover {
+    background: #094759;
 }

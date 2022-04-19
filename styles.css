@@ -11,10 +11,17 @@ body {
     
 }
 
-header {
+header, footer {
     display: flex;
     align-items: center;
     width: 25%;
+}
+
+footer {
+    justify-content: center;
+    margin-top: 2rem;
+    color: white;
+    font-size: 2rem;
 }
 
 .top-left {

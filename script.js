@@ -1,6 +1,6 @@
 // gameboard module
 const gameBoard = (() => {
-    const board = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x'];
+    const board = ['', '', '', '', '', '', '', '', ''];
     return { board };
 })();
 
@@ -20,17 +20,24 @@ let turn = 1;
 gameBoard.board.forEach((element) => {
     let block = document.createElement("div");
     block.classList.add("block");
+    block.innerText = element;
     block.addEventListener('click', () => {
         if(block.innerText === ""){
             if(turn % 2 !== 0){
-                block.innerText = "X";
-                turn++;
+                element = "X";
             }else{
-                block.innerText = "O";
-                turn++;
+                element = "O";
             }
+            block.innerText = element;
+            gameBoard.board[turn] = element;
+            turn++;
+            console.log(gameBoard.board);
         }
     })
-    let board = document.querySelector('#board');
-    board.appendChild(block);
+    let boardDiv = document.querySelector('#board');
+    boardDiv.appendChild(block);
 });
+
+// const check = () => {
+//     console.log("test");
+// }

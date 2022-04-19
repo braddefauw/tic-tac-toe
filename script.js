@@ -16,10 +16,13 @@ const brad = Player('brad');
 // brad.getName();
 
 let turn = 1;
+let index = 0;
 
 gameBoard.board.forEach((element) => {
     let block = document.createElement("div");
     block.classList.add("block");
+    block.dataset.indexNumber = index;
+    index++;
     block.innerText = element;
     block.addEventListener('click', () => {
         if(block.innerText === ""){
@@ -29,15 +32,18 @@ gameBoard.board.forEach((element) => {
                 element = "O";
             }
             block.innerText = element;
-            gameBoard.board[turn] = element;
+            gameBoard.board[block.dataset.indexNumber] = element;
+            check();
             turn++;
-            console.log(gameBoard.board);
         }
     })
     let boardDiv = document.querySelector('#board');
     boardDiv.appendChild(block);
 });
 
-// const check = () => {
-//     console.log("test");
-// }
+const check = () => {
+    console.log(gameBoard.board);
+    if((gameBoard.board[0] && gameBoard.board[1] && gameBoard.board[2] === "X")){
+        console.log("x wins");
+    }
+}

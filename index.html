@@ -12,21 +12,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="top-left">
-            <p class="x">X</p>
-            <p class="o">O</p>
+    <div class="game-container">
+        <header>
+            <div class="top-left">
+                <p class="x">X</p>
+                <p class="o">O</p>
+            </div>
+            <div class="top-right">
+                <img src="img/restart.svg" />
+            </div>
+        </header>
+        <div id="board-container">
+            <div id="board"></div>
         </div>
-        <div class="top-right">
-            <img src="img/restart.svg" />
-        </div>
-    </header>
-    <div id="board-container">
-        <div id="board"></div>
+        <footer>
+            In Progress...
+        </footer>
     </div>
-    <footer>
-        In Progress...
-    </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>

@@ -17,6 +17,7 @@ let turn = 1;
 let index = 0;
 
 let message = document.querySelector('.message');
+let restart = document.querySelector('#restart');
 
 gameBoard.board.forEach((element) => {
     let block = document.createElement("div");
@@ -69,3 +70,12 @@ const check = () => {
             message.innerText = "DRAW"
     }
 }
+
+restart.addEventListener('click', () => {
+    let block = document.querySelectorAll('[data-index-number]');
+    [].forEach.call(block, function(div) {
+        div.innerHTML = "";
+        message.innerText = "In Progress...";
+        message.style.color = 'white';
+      });
+})

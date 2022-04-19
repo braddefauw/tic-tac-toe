@@ -1,8 +1,53 @@
 body {
     background-color: #07273A;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    font-family: 'Merienda One', cursive;
+    
 }
 
+header {
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+
+.top-left {
+    display: flex;
+}
+
+.top-right {
+    margin-left: auto;
+}
+
+.top-right img {
+    background: lightgray;
+    padding: 0.25rem;
+    cursor: pointer;
+    height: 2rem;
+    border-radius: 0.25rem;
+}
+
+.x, .o {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-right: 0.5rem;
+}
+
+.x {
+    color: rgb(255, 230, 0);
+}
+
+.o {
+    color: rgb(8, 201, 201);
+}
 #board-container {
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;

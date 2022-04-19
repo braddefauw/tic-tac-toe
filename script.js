@@ -4,8 +4,6 @@ const gameBoard = (() => {
     return { board };
 })();
 
-// console.log(gameBoard.board);
-
 // player factory function
 const Player = name => {
     const getName = () => console.log(name);
@@ -62,6 +60,6 @@ const check = () => {
         console.log("o wins");
     }else if(gameBoard.board[0] && gameBoard.board[1] && gameBoard.board[2] && gameBoard.board[3] &&
         gameBoard.board[4] && gameBoard.board[5] && gameBoard.board[6] && gameBoard.board[7] && gameBoard.board[8]){
-        console.log("tie")
+        console.log("draw")
     }
 }

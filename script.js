@@ -42,7 +42,6 @@ gameBoard.board.forEach((element) => {
 });
 
 const check = () => {
-    console.log(gameBoard.board)
     if((gameBoard.board[0] === "X" && gameBoard.board[1] === "X" && gameBoard.board[2] === "X") ||
     (gameBoard.board[3] === "X" && gameBoard.board[4] === "X"&& gameBoard.board[5] === "X") ||
     (gameBoard.board[6] === "X" && gameBoard.board[7] === "X" && gameBoard.board[8] === "X") ||
@@ -61,5 +60,8 @@ const check = () => {
     (gameBoard.board[0] === "O" && gameBoard.board[4] === "O" && gameBoard.board[8] === "O") ||
     (gameBoard.board[2] === "O" && gameBoard.board[4] === "O" && gameBoard.board[6] === "O")){
         console.log("o wins");
+    }else if(gameBoard.board[0] && gameBoard.board[1] && gameBoard.board[2] && gameBoard.board[3] &&
+        gameBoard.board[4] && gameBoard.board[5] && gameBoard.board[6] && gameBoard.board[7] && gameBoard.board[8]){
+        console.log("tie")
     }
 }

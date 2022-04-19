@@ -14,7 +14,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    width: 30%;
+    width: 25%;
 }
 
 .top-left {
@@ -55,15 +55,18 @@ header {
 
 #board {
     display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
-    gap: 1rem;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 2rem;
 }
 
 .block {
     color: white;
-    border: 1px solid white;
+    background: #094050;
+    border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 14px 2px -2px #04232C;
+    font-size: 2rem;
 }

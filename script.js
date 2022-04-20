@@ -26,12 +26,16 @@ gameBoard.board.forEach((element) => {
     index++;
     block.innerText = element;
     block.addEventListener('click', () => {
-        if(message.innerText === "In Progress..."){
+        if(message.innerText === "X's Turn!" || message.innerText === "O's Turn!"){
             if(block.innerText === ""){
                 if(turn % 2 !== 0){
+                    block.style.color = "rgb(255, 230, 0)";
                     element = "X";
+                    message.innerText = "O's Turn!";
                 }else{
+                    block.style.color = "rgb(8, 201, 201)";
                     element = "O";
+                    message.innerText = "X's Turn!";
                 }
                 block.innerText = element;
                 gameBoard.board[block.dataset.indexNumber] = element;
@@ -76,7 +80,7 @@ restart.addEventListener('click', () => {
     [].forEach.call(block, function(div) {
         gameBoard.board[div.dataset.indexNumber] = "";
         div.innerHTML = "";
-        message.innerText = "In Progress...";
+        message.innerText = "X's Turn!";
         message.style.color = 'white';
       });
 })

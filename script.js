@@ -41,12 +41,25 @@ gameBoard.board.forEach((element) => {
                 gameBoard.board[block.dataset.indexNumber] = element;
                 check();
                 turn++;
+                // const rndInt = randomIntFromInterval(1, 8);
+                // gameBoard.board[rndInt] = "O";
+                // let divs = document.getElementsByClassName("block");
+                // for(var i = 0; i < divs.length; i++){
+                //     if(divs[i].dataset.indexNumber == rndInt){
+                //         divs[i].innerText = "O";
+                //         turn++;
+                //     }
+                // }
             }
         } 
     })
     let boardDiv = document.querySelector('#board');
     boardDiv.appendChild(block);
 });
+
+function randomIntFromInterval(min, max) { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
 const check = () => {
     if((gameBoard.board[0] === "X" && gameBoard.board[1] === "X" && gameBoard.board[2] === "X") ||

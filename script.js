@@ -20,6 +20,8 @@ let message = document.querySelector('.message');
 let restart = document.querySelector('#restart');
 
 const pvp = () => gameBoard.board.forEach((element) => {
+    document.querySelector(".game-container.hidden").style.display = "flex";
+    document.querySelector(".footer.hidden").style.display = "flex";
     document.getElementById("overlay").style.display = "none";
     let block = document.createElement("div");
     block.classList.add("block");
@@ -50,6 +52,8 @@ const pvp = () => gameBoard.board.forEach((element) => {
 });
 
 const ai = () => gameBoard.board.forEach((element) => {
+    document.querySelector(".game-container.hidden").style.display = "flex";
+    document.querySelector(".footer.hidden").style.display = "flex";
     document.getElementById("overlay").style.display = "none";
     let block = document.createElement("div");
     block.classList.add("block");
@@ -84,7 +88,7 @@ const ai = () => gameBoard.board.forEach((element) => {
                 }else{
                     while(gameBoard.board[rndInt] !== ""){
                         rndInt = randomIntFromInterval(1, 8);
-                        console.log(`${rndInt} is free`)
+                        // console.log(`${rndInt} is free`)
                     }
                     gameBoard.board[rndInt] = "O";
                 }
@@ -144,6 +148,3 @@ restart.addEventListener('click', () => {
         message.style.color = 'white';
       });
 })
-
-// pvp();
-// ai();

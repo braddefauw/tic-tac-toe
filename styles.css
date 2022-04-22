@@ -59,6 +59,10 @@ button {
     background: rgb(8, 201, 201);
 }
 
+.game-container.hidden, .footer.hidden {
+    display: none;
+}
+
 .game-container {
     display: flex;
     align-items: center;

@@ -12,10 +12,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="overlay">
+        <div id="text">
+            Who do you want to play against?<br>
+            <div class="button-container">
+                <button class="person-selector" onclick="pvp()">Person</button>
+                <button class="ai-selector" onclick="ai()">Computer</button>
+            </div>
+        </div>
+    </div>
     <div class="game-container">
         <header>
             <div class="top-left">
-                <p class="x">X</p>
+                <p class="x" onclick="on()">X</p>
                 <p class="o">O</p>
             </div>
             <div class="top-right">

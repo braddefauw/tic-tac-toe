@@ -20,6 +20,7 @@ let message = document.querySelector('.message');
 let restart = document.querySelector('#restart');
 
 const pvp = () => gameBoard.board.forEach((element) => {
+    document.getElementById("overlay").style.display = "none";
     let block = document.createElement("div");
     block.classList.add("block");
     block.dataset.indexNumber = index;
@@ -49,6 +50,7 @@ const pvp = () => gameBoard.board.forEach((element) => {
 });
 
 const ai = () => gameBoard.board.forEach((element) => {
+    document.getElementById("overlay").style.display = "none";
     let block = document.createElement("div");
     block.classList.add("block");
     block.dataset.indexNumber = index;
@@ -143,5 +145,5 @@ restart.addEventListener('click', () => {
       });
 })
 
-pvp();
+// pvp();
 // ai();

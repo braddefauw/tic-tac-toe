@@ -19,7 +19,7 @@ let index = 0;
 let message = document.querySelector('.message');
 let restart = document.querySelector('#restart');
 
-gameBoard.board.forEach((element) => {
+const pvp = () => gameBoard.board.forEach((element) => {
     let block = document.createElement("div");
     block.classList.add("block");
     block.dataset.indexNumber = index;
@@ -37,6 +37,29 @@ gameBoard.board.forEach((element) => {
                     element = "O";
                     message.innerText = "X's Turn!";
                 }
+                block.innerText = element;
+                gameBoard.board[block.dataset.indexNumber] = element;
+                check();
+                turn++;
+            }
+        } 
+    })
+    let boardDiv = document.querySelector('#board');
+    boardDiv.appendChild(block);
+});
+
+const ai = () => gameBoard.board.forEach((element) => {
+    let block = document.createElement("div");
+    block.classList.add("block");
+    block.dataset.indexNumber = index;
+    index++;
+    block.innerText = element;
+    block.addEventListener('click', () => {
+        if(message.innerText === "X's Turn!" || message.innerText === "O's Turn!"){
+            if(block.innerText === ""){
+                block.style.color = "rgb(255, 230, 0)";
+                element = "X";
+                message.innerText = "O's Turn!";
                 block.innerText = element;
                 gameBoard.board[block.dataset.indexNumber] = element;
                 check();
@@ -119,3 +142,6 @@ restart.addEventListener('click', () => {
         message.style.color = 'white';
       });
 })
+
+pvp();
+// ai();

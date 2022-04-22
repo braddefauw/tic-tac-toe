@@ -41,15 +41,37 @@ gameBoard.board.forEach((element) => {
                 gameBoard.board[block.dataset.indexNumber] = element;
                 check();
                 turn++;
-                // const rndInt = randomIntFromInterval(1, 8);
-                // gameBoard.board[rndInt] = "O";
-                // let divs = document.getElementsByClassName("block");
-                // for(var i = 0; i < divs.length; i++){
-                //     if(divs[i].dataset.indexNumber == rndInt){
-                //         divs[i].innerText = "O";
-                //         turn++;
-                //     }
-                // }
+                //begin AI sequence
+                let rndInt = randomIntFromInterval(1, 8);
+                if(gameBoard.board[rndInt] === ""){
+                    console.log(`${rndInt} is free`)
+                    gameBoard.board[rndInt] = "O";
+                }else if(gameBoard.board[0] !== "" &&
+                gameBoard.board[1] !== "" &&
+                gameBoard.board[2] !== "" &&
+                gameBoard.board[3] !== "" &&
+                gameBoard.board[4] !== "" &&
+                gameBoard.board[5] !== "" &&
+                gameBoard.board[6] !== "" &&
+                gameBoard.board[7] !== "" &&
+                gameBoard.board[8] !== ""){
+                    return;
+                }else{
+                    while(gameBoard.board[rndInt] !== ""){
+                        rndInt = randomIntFromInterval(1, 8);
+                        console.log(`${rndInt} is free`)
+                    }
+                    gameBoard.board[rndInt] = "O";
+                }
+                let divs = document.getElementsByClassName("block");
+                for(var i = 0; i < divs.length; i++){
+                    if(divs[i].dataset.indexNumber == rndInt){
+                        divs[i].style.color = "rgb(8, 201, 201)";
+                        divs[i].innerText = "O";
+                        turn++;
+                    }
+                }
+                check();
             }
         } 
     })
